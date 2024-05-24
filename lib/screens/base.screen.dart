@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+class BaseScreen extends StatefulWidget {
+  const BaseScreen({
+    super.key,
+    this.arguments,
+  });
+
+  static const String id = "/";
+  final Object? arguments;
+
+  @override
+  State<BaseScreen> createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends State<BaseScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('Hello World!'),
+      ),
+    );
+  }
+}
