@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:starter/controllers/approuter.dart';
 import 'package:starter/controllers/data.controllers/main.data.controller.dart';
+import 'package:starter/i18n/applocalizations.dart';
 import 'package:starter/screens/base.screen.dart';
 import 'package:starter/utils/context.helper.dart';
 
@@ -40,6 +42,16 @@ class MainApp extends StatelessWidget {
         theme: ThemeData.light(useMaterial3: true).copyWith(
           textTheme: GoogleFonts.montserratTextTheme(),
         ),
+        supportedLocales: const [
+          Locale.fromSubtags(languageCode: "en"),
+          Locale.fromSubtags(languageCode: "ar"),
+        ],
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
       ),
     );
   }
